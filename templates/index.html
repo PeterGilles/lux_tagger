@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>POS Tagger</title>
+    <title>Part-of-Speech Tagger</title>
     <!-- Include Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
     <!-- Include custom CSS -->
     <style>
+        
         body {
             font-family: 'Roboto', sans-serif;
         }
@@ -22,6 +23,7 @@
         .form-control {
             font-size: 1.2rem;
             padding: 1rem;
+            width: 100%;
         }
         button[type="submit"] {
             font-size: 1.2rem;
@@ -36,6 +38,14 @@
         button[type="submit"]:hover {
             background-color: #0069d9;
         }
+        .btn-secondary {
+      background-color: rgba(111, 165, 215, 0.825);
+      color: white;
+      font-size: 1.2rem;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 0.25rem;
+    }
         table {
             border-collapse: collapse;
             width: 100%;
@@ -57,13 +67,14 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="mt-5">POS Tagger for Luxembourgish</h1>
+        <h1 class="mt-5">Part-of-Speech Tagger for Luxembourgish</h1>
         <form method="POST" action="/pos_tag" id="pos-tag-form">
             <div class="form-group">
                 <label for="text">Enter text:<br></label>
-                <textarea class="form-control" id="text" name="text" rows="5"></textarea>
+                <textarea class="form-control" id="text" name="text" rows="7"></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Tag Text</button>
+            <button type="button" class="btn btn-secondary" id="example-text-btn">Beispill-Text lueden</button>
         </form>
         <div class="mt-5" id="output">
             <!-- Output goes here -->
@@ -88,6 +99,11 @@
                     }
                 });
             });
+
+            $('#example-text-btn').click(function() {
+                $('#text').val("Iwwer dëst klengt Wuert gëtt dacks gestridden: Däerf een iwwerhaapt säit - wat ganz offensichtlech däitsch ass - soen, oder huet ee besser, déi urlëtzebuergesch Wierder zanter oder zënter ze huelen? Mir als Fuerscher leeën eis do net direkt fest, mee mir kucke fir d’éischt emol, wat den allgemengen, aktuelle Sproochgebrauch eis iwwerhaapt weist. An der Schnëssen-App hu mer dofir de franséische Saz Depuis 1960 Camille Weber s'informe sur des thèmes psychologiques. agebaut, deen dann op Lëtzebuergesch sollt iwwersat ginn. Am Ganzen hunn 916 Participante*ën aus der Schnëssen-Community matgemaach a spontan hir Variant erageschwat. Déi global Verdeelung vun den Haaptvariante gesäit een an dësem Kéisdiagramm. Iwwer 62 % (563 Opnamen) hunn depuis mat säit erëmginn. Manner heefeg, awer net seelen, sinn zënter (21 %, 193) an zanter (12 %, 106).");
+            });
+
         });
     </script>
 </body>
