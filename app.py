@@ -17,7 +17,7 @@ def index():
 
 @app.route('/pos_tag', methods=['POST'])
 def pos_tag():
-    text = request.json['text']
+    text = request.form['text']
     doc = nlp(text)
     headers = ["Text", "Tag", "Stopword", "Shape", "Alpha"]
     rows = []
