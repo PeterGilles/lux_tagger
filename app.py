@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, render_template, request
 import spacy
 from spacy import lang
 # you need spaCy version >= 2.2.2
@@ -10,6 +10,10 @@ app = Flask(__name__)
 # Create the nlp object
 nlp = Luxembourgish()
 nlp = spacy.load("./lux-tagger-July2023/model-best/")
+
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 @app.route('/pos_tag', methods=['POST'])
 def pos_tag():
