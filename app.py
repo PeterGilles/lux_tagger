@@ -19,7 +19,7 @@ def index():
 def pos_tag():
     text = request.form['text']
     doc = nlp(text)
-    headers = ["Text", "Tag", "Stopword", "Shape", "Alpha"]
+    headers = ["Text", "POS", "Stopword", "Shape", "Alpha"]
     rows = []
     for token in doc:
         rows.append([token.text, token.tag_, token.is_stop, token.shape_, token.is_alpha])
