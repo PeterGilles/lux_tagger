@@ -1,2 +1,2 @@
 # lux_tagger
-A POS-Tagger for Luxembourgishas API
+A POS-Tagger for Luxembourgish as API
