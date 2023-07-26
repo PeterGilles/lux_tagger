@@ -1,12 +1,12 @@
 from flask import Flask, render_template, request
 import spacy
 from spacy import lang
-# you need spaCy version >= 2.2.2
 from spacy.lang.lb import Luxembourgish
 
 from tabulate import tabulate
 
 app = Flask(__name__)
+
 # Create the nlp object
 nlp = Luxembourgish()
 nlp = spacy.load("./lux-tagger-July2023/model-best/")
